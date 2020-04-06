@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:firstflutter/widget/FormWidget.dart';
 import 'package:firstflutter/widget/ImageIconWidget.dart';
 import 'package:firstflutter/widget/MaterialBtnWidget.dart';
 import 'package:firstflutter/widget/NewRoute.dart';
@@ -59,6 +60,8 @@ class MyApp extends StatelessWidget {
         "imageIcon": (context) => ImageIconWidget(),
         "switchCheck": (context) => SwitchCheckWidget(),
         "textField": (context) => TextFieldWidget(),
+        "formWidget": (context) => FormWidget(),
+
       },
       navigatorObservers: [RouteObservers()],
 
@@ -209,6 +212,13 @@ class _MyHomePageState extends State<MyHomePage> {
               textColor: Colors.blue,
               onPressed: () {
                 Navigator.pushNamed(context, "textField");
+              },
+            ),
+            RaisedButton(
+              child: Text("formWidget"),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.pushNamed(context, "formWidget");
               },
             ),
           ],
