@@ -1,26 +1,30 @@
 import 'dart:async';
+import 'package:firstflutter/widget/ImageIconWidget.dart';
+import 'package:firstflutter/widget/MaterialBtnWidget.dart';
 import 'package:firstflutter/widget/NewRoute.dart';
 import 'package:firstflutter/widget/ParentBWidget.dart';
 import 'package:firstflutter/widget/ParentCWidget.dart';
 import 'package:firstflutter/widget/RandomWordsWidget.dart';
 import 'package:firstflutter/RouteObservers.dart';
-import 'package:firstflutter/state/SnackBarState.dart';
+import 'package:firstflutter/widget/SwitchCheckWidget.dart';
 import 'package:firstflutter/widget/TapboxA.dart';
+import 'package:firstflutter/widget/TextFieldWidget.dart';
+import 'package:firstflutter/widget/TextStyleWidget.dart';
 import 'package:flutter/material.dart';
 
 void main() {
 //  runApp(MyApp());
-FlutterError.onError=(FlutterErrorDetails details){
-  //上报错误和日志逻辑
-};
+  FlutterError.onError = (FlutterErrorDetails details) {
+    //上报错误和日志逻辑
+  };
   runZoned(() => runApp(MyApp()), zoneSpecification: new ZoneSpecification(
-      print: (Zone self, ZoneDelegate parent, Zone zone, String line) {
-        //这里拦截所有日志输出
+//      print: (Zone self, ZoneDelegate parent, Zone zone, String line) {
+//    //这里拦截所有日志输出
 //    parent.print(zone, "Intercepted:$line");
-  }),onError: (Object obj,StackTrace stack){
+//  }
+  ), onError: (Object obj, StackTrace stack) {
     //这里可以构建错误信息,然后上报
   });
-
 }
 
 class MyApp extends StatelessWidget {
@@ -47,9 +51,14 @@ class MyApp extends StatelessWidget {
           return NewRoute(text: ModalRoute.of(context).settings.arguments);
         },
         "/": (context) => MyHomePage(title: "Flutter Demo Home Page"),
-        "tapboxa":(context)=>TapboxA(),
-        "tapboxb":(context)=>ParentBWidget(),
-        "tapboxc":(context)=>ParentCWidget(),
+        "tapboxa": (context) => TapboxA(),
+        "tapboxb": (context) => ParentBWidget(),
+        "tapboxc": (context) => ParentCWidget(),
+        "textStyle": (context) => TextStyleWidget(),
+        "materialBtn": (context) => MaterialBtnWidget(),
+        "imageIcon": (context) => ImageIconWidget(),
+        "switchCheck": (context) => SwitchCheckWidget(),
+        "textField": (context) => TextFieldWidget(),
       },
       navigatorObservers: [RouteObservers()],
 
@@ -124,7 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // center the children vertically; the main axis here is the vertical
           // axis because Columns are vertical (the cross axis would be
           // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
+//          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             RaisedButton(
               child: Text("路由传参"),
@@ -143,7 +152,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.display1,
+              style: Theme.of(context).textTheme.headline4,
             ),
             RandomWordsWidget(),
             RaisedButton(
@@ -165,6 +174,41 @@ class _MyHomePageState extends State<MyHomePage> {
               textColor: Colors.blue,
               onPressed: () {
                 Navigator.pushNamed(context, "tapboxc");
+              },
+            ),
+            RaisedButton(
+              child: Text("testStyle"),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.pushNamed(context, "textStyle");
+              },
+            ),
+            RaisedButton(
+              child: Text("materialBtn"),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.pushNamed(context, "materialBtn");
+              },
+            ),
+            RaisedButton(
+              child: Text("imageIcon"),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.pushNamed(context, "imageIcon");
+              },
+            ),
+            RaisedButton(
+              child: Text("switchCheck"),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.pushNamed(context, "switchCheck");
+              },
+            ),
+            RaisedButton(
+              child: Text("textField"),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.pushNamed(context, "textField");
               },
             ),
           ],

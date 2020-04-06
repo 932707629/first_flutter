@@ -38,7 +38,7 @@ class TapboxCState extends State<TapboxC>{
           color: widget.active?Colors.lightGreen[700]:Colors.grey[600],
         ),
       ),
-    );;
+    );
 
   }
 
