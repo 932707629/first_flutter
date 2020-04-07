@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:firstflutter/widget/FormWidget.dart';
 import 'package:firstflutter/widget/ImageIconWidget.dart';
+import 'package:firstflutter/widget/IndicatorWidget.dart';
 import 'package:firstflutter/widget/MaterialBtnWidget.dart';
 import 'package:firstflutter/widget/NewRoute.dart';
 import 'package:firstflutter/widget/ParentBWidget.dart';
@@ -61,6 +62,7 @@ class MyApp extends StatelessWidget {
         "switchCheck": (context) => SwitchCheckWidget(),
         "textField": (context) => TextFieldWidget(),
         "formWidget": (context) => FormWidget(),
+        "indicatorWidget": (context) => IndicatorWidget(),
 
       },
       navigatorObservers: [RouteObservers()],
@@ -219,6 +221,13 @@ class _MyHomePageState extends State<MyHomePage> {
               textColor: Colors.blue,
               onPressed: () {
                 Navigator.pushNamed(context, "formWidget");
+              },
+            ),
+            RaisedButton(
+              child: Text("indicatorWidget"),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.pushNamed(context, "indicatorWidget");
               },
             ),
           ],
