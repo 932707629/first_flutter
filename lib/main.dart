@@ -13,6 +13,7 @@ import 'package:firstflutter/widget/SwitchCheckWidget.dart';
 import 'package:firstflutter/widget/TapboxA.dart';
 import 'package:firstflutter/widget/TextFieldWidget.dart';
 import 'package:firstflutter/widget/TextStyleWidget.dart';
+import 'package:firstflutter/widget/WrapFlowWidget.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -65,6 +66,7 @@ class MyApp extends StatelessWidget {
         "formWidget": (context) => FormWidget(),
         "indicatorWidget": (context) => IndicatorWidget(),
         "rowColumnWidget": (context) => RowColumnWidget(),
+        "wrapFlowWidget": (context) => WrapFlowWidget(),
 
       },
       navigatorObservers: [RouteObservers()],
@@ -162,83 +164,98 @@ class _MyHomePageState extends State<MyHomePage> {
               style: Theme.of(context).textTheme.display1,
             ),
             RandomWordsWidget(),
-            RaisedButton(
-              child: Text("tapboxa"),
-              textColor: Colors.blue,
-              onPressed: () {
-                Navigator.pushNamed(context, "tapboxa");
-              },
+            Wrap(
+              spacing: 4.0,
+              runSpacing: 4.0,
+              alignment: WrapAlignment.center,
+              children: <Widget>[
+                RaisedButton(
+                  child: Text("tapboxa"),
+                  textColor: Colors.blue,
+                  onPressed: () {
+                    Navigator.pushNamed(context, "tapboxa");
+                  },
+                ),
+                RaisedButton(
+                  child: Text("tapboxb"),
+                  textColor: Colors.blue,
+                  onPressed: () {
+                    Navigator.pushNamed(context, "tapboxb");
+                  },
+                ),
+                RaisedButton(
+                  child: Text("tapboxc"),
+                  textColor: Colors.blue,
+                  onPressed: () {
+                    Navigator.pushNamed(context, "tapboxc");
+                  },
+                ),
+                RaisedButton(
+                  child: Text("testStyle"),
+                  textColor: Colors.blue,
+                  onPressed: () {
+                    Navigator.pushNamed(context, "textStyle");
+                  },
+                ),
+                RaisedButton(
+                  child: Text("materialBtn"),
+                  textColor: Colors.blue,
+                  onPressed: () {
+                    Navigator.pushNamed(context, "materialBtn");
+                  },
+                ),
+                RaisedButton(
+                  child: Text("imageIcon"),
+                  textColor: Colors.blue,
+                  onPressed: () {
+                    Navigator.pushNamed(context, "imageIcon");
+                  },
+                ),
+                RaisedButton(
+                  child: Text("switchCheck"),
+                  textColor: Colors.blue,
+                  onPressed: () {
+                    Navigator.pushNamed(context, "switchCheck");
+                  },
+                ),
+                RaisedButton(
+                  child: Text("textField"),
+                  textColor: Colors.blue,
+                  onPressed: () {
+                    Navigator.pushNamed(context, "textField");
+                  },
+                ),
+                RaisedButton(
+                  child: Text("formWidget"),
+                  textColor: Colors.blue,
+                  onPressed: () {
+                    Navigator.pushNamed(context, "formWidget");
+                  },
+                ),
+                RaisedButton(
+                  child: Text("indicatorWidget"),
+                  textColor: Colors.blue,
+                  onPressed: () {
+                    Navigator.pushNamed(context, "indicatorWidget");
+                  },
+                ),
+                RaisedButton(
+                  child: Text("rowColumnWidget"),
+                  textColor: Colors.blue,
+                  onPressed: () {
+                    Navigator.pushNamed(context, "rowColumnWidget");
+                  },
+                ),
+                RaisedButton(
+                  child: Text("wrapFlowWidget"),
+                  textColor: Colors.blue,
+                  onPressed: () {
+                    Navigator.pushNamed(context, "wrapFlowWidget");
+                  },
+                ),
+              ],
             ),
-            RaisedButton(
-              child: Text("tapboxb"),
-              textColor: Colors.blue,
-              onPressed: () {
-                Navigator.pushNamed(context, "tapboxb");
-              },
-            ),
-            RaisedButton(
-              child: Text("tapboxc"),
-              textColor: Colors.blue,
-              onPressed: () {
-                Navigator.pushNamed(context, "tapboxc");
-              },
-            ),
-            RaisedButton(
-              child: Text("testStyle"),
-              textColor: Colors.blue,
-              onPressed: () {
-                Navigator.pushNamed(context, "textStyle");
-              },
-            ),
-            RaisedButton(
-              child: Text("materialBtn"),
-              textColor: Colors.blue,
-              onPressed: () {
-                Navigator.pushNamed(context, "materialBtn");
-              },
-            ),
-            RaisedButton(
-              child: Text("imageIcon"),
-              textColor: Colors.blue,
-              onPressed: () {
-                Navigator.pushNamed(context, "imageIcon");
-              },
-            ),
-            RaisedButton(
-              child: Text("switchCheck"),
-              textColor: Colors.blue,
-              onPressed: () {
-                Navigator.pushNamed(context, "switchCheck");
-              },
-            ),
-            RaisedButton(
-              child: Text("textField"),
-              textColor: Colors.blue,
-              onPressed: () {
-                Navigator.pushNamed(context, "textField");
-              },
-            ),
-            RaisedButton(
-              child: Text("formWidget"),
-              textColor: Colors.blue,
-              onPressed: () {
-                Navigator.pushNamed(context, "formWidget");
-              },
-            ),
-            RaisedButton(
-              child: Text("indicatorWidget"),
-              textColor: Colors.blue,
-              onPressed: () {
-                Navigator.pushNamed(context, "indicatorWidget");
-              },
-            ),
-            RaisedButton(
-              child: Text("rowColumnWidget"),
-              textColor: Colors.blue,
-              onPressed: () {
-                Navigator.pushNamed(context, "rowColumnWidget");
-              },
-            ),
+
           ],
         ),
       ),
