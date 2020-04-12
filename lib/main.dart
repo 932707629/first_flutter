@@ -1,7 +1,9 @@
 import 'dart:async';
+import 'package:firstflutter/widget/CustomScrollViewWidget.dart';
 import 'package:firstflutter/widget/FormWidget.dart';
 import 'package:firstflutter/widget/ImageIconWidget.dart';
 import 'package:firstflutter/widget/IndicatorWidget.dart';
+import 'package:firstflutter/widget/ListViewWidget.dart';
 import 'package:firstflutter/widget/MaterialBtnWidget.dart';
 import 'package:firstflutter/widget/NewRoute.dart';
 import 'package:firstflutter/widget/ParentBWidget.dart';
@@ -9,12 +11,15 @@ import 'package:firstflutter/widget/ParentCWidget.dart';
 import 'package:firstflutter/widget/RandomWordsWidget.dart';
 import 'package:firstflutter/RouteObservers.dart';
 import 'package:firstflutter/widget/RowColumnWidget.dart';
+import 'package:firstflutter/widget/ScaffoldWidget.dart';
 import 'package:firstflutter/widget/SwitchCheckWidget.dart';
 import 'package:firstflutter/widget/TapboxA.dart';
 import 'package:firstflutter/widget/TextFieldWidget.dart';
 import 'package:firstflutter/widget/TextStyleWidget.dart';
 import 'package:firstflutter/widget/WrapFlowWidget.dart';
 import 'package:flutter/material.dart';
+
+import 'widget/GridViewWidget.dart';
 
 void main() {
 //  runApp(MyApp());
@@ -33,6 +38,32 @@ void main() {
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+
+
+  Map<String,WidgetBuilder> routePages={
+    "new_route": (context) {
+      return NewRoute(text: ModalRoute.of(context).settings.arguments);
+    },
+    "/": (context) => MyHomePage(title: "Flutter Demo Home Page"),
+    "tapboxa": (context) => TapboxA(),
+    "tapboxb": (context) => ParentBWidget(),
+    "tapboxc": (context) => ParentCWidget(),
+    "textStyle": (context) => TextStyleWidget(),
+    "materialBtn": (context) => MaterialBtnWidget(),
+    "imageIcon": (context) => ImageIconWidget(),
+    "switchCheck": (context) => SwitchCheckWidget(),
+    "textField": (context) => TextFieldWidget(),
+    "formWidget": (context) => FormWidget(),
+    "indicatorWidget": (context) => IndicatorWidget(),
+    "rowColumnWidget": (context) => RowColumnWidget(),
+    "wrapFlowWidget": (context) => WrapFlowWidget(),
+    "scaffoldWidget": (context) => ScaffoldWidget(),
+    "listViewWidget": (context) => ListViewWidget(),
+    "gridViewWidget": (context) => GridViewWidget(),
+    "customScrollViewWidget": (context) => CustomScrollViewWidget(),
+
+  };
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -50,25 +81,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      routes: {
-        "new_route": (context) {
-          return NewRoute(text: ModalRoute.of(context).settings.arguments);
-        },
-        "/": (context) => MyHomePage(title: "Flutter Demo Home Page"),
-        "tapboxa": (context) => TapboxA(),
-        "tapboxb": (context) => ParentBWidget(),
-        "tapboxc": (context) => ParentCWidget(),
-        "textStyle": (context) => TextStyleWidget(),
-        "materialBtn": (context) => MaterialBtnWidget(),
-        "imageIcon": (context) => ImageIconWidget(),
-        "switchCheck": (context) => SwitchCheckWidget(),
-        "textField": (context) => TextFieldWidget(),
-        "formWidget": (context) => FormWidget(),
-        "indicatorWidget": (context) => IndicatorWidget(),
-        "rowColumnWidget": (context) => RowColumnWidget(),
-        "wrapFlowWidget": (context) => WrapFlowWidget(),
-
-      },
+      routes: routePages,
       navigatorObservers: [RouteObservers()],
 
 //      home: MyHomePage(title: 'Flutter Demo Home Page'),
@@ -251,6 +264,34 @@ class _MyHomePageState extends State<MyHomePage> {
                   textColor: Colors.blue,
                   onPressed: () {
                     Navigator.pushNamed(context, "wrapFlowWidget");
+                  },
+                ),
+                RaisedButton(
+                  child: Text("scaffoldWidget"),
+                  textColor: Colors.blue,
+                  onPressed: () {
+                    Navigator.pushNamed(context, "scaffoldWidget");
+                  },
+                ),
+                RaisedButton(
+                  child: Text("listViewWidget"),
+                  textColor: Colors.blue,
+                  onPressed: () {
+                    Navigator.pushNamed(context, "listViewWidget");
+                  },
+                ),
+                RaisedButton(
+                  child: Text("gridViewWidget"),
+                  textColor: Colors.blue,
+                  onPressed: () {
+                    Navigator.pushNamed(context, "gridViewWidget");
+                  },
+                ),
+                RaisedButton(
+                  child: Text("customScrollViewWidget"),
+                  textColor: Colors.blue,
+                  onPressed: () {
+                    Navigator.pushNamed(context, "customScrollViewWidget");
                   },
                 ),
               ],
