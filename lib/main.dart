@@ -20,6 +20,7 @@ import 'package:firstflutter/widget/WrapFlowWidget.dart';
 import 'package:flutter/material.dart';
 
 import 'widget/GridViewWidget.dart';
+import 'widget/WillPopScopeWidget.dart';
 
 void main() {
 //  runApp(MyApp());
@@ -61,6 +62,7 @@ class MyApp extends StatelessWidget {
     "listViewWidget": (context) => ListViewWidget(),
     "gridViewWidget": (context) => GridViewWidget(),
     "customScrollViewWidget": (context) => CustomScrollViewWidget(),
+    "willPopScopeWidget": (context) => WillPopScopeWidget(),
 
   };
 
@@ -292,6 +294,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   textColor: Colors.blue,
                   onPressed: () {
                     Navigator.pushNamed(context, "customScrollViewWidget");
+                  },
+                ),
+                RaisedButton(
+                  child: Text("willPopScopeWidget"),
+                  textColor: Colors.blue,
+                  onPressed: () {
+                    Navigator.pushNamed(context, "willPopScopeWidget");
                   },
                 ),
               ],
