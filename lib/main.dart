@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'package:firstflutter/widget/CustomScrollViewWidget.dart';
+import 'package:firstflutter/widget/DialogWidget.dart';
 import 'package:firstflutter/widget/FormWidget.dart';
+import 'package:firstflutter/widget/FutureBuilderWidget.dart';
 import 'package:firstflutter/widget/ImageIconWidget.dart';
 import 'package:firstflutter/widget/IndicatorWidget.dart';
 import 'package:firstflutter/widget/ListViewWidget.dart';
@@ -8,14 +10,17 @@ import 'package:firstflutter/widget/MaterialBtnWidget.dart';
 import 'package:firstflutter/widget/NewRoute.dart';
 import 'package:firstflutter/widget/ParentBWidget.dart';
 import 'package:firstflutter/widget/ParentCWidget.dart';
+import 'package:firstflutter/widget/ProviderWidget.dart';
 import 'package:firstflutter/widget/RandomWordsWidget.dart';
 import 'package:firstflutter/RouteObservers.dart';
 import 'package:firstflutter/widget/RowColumnWidget.dart';
 import 'package:firstflutter/widget/ScaffoldWidget.dart';
+import 'package:firstflutter/widget/StreamBuilderWidget.dart';
 import 'package:firstflutter/widget/SwitchCheckWidget.dart';
 import 'package:firstflutter/widget/TapboxA.dart';
 import 'package:firstflutter/widget/TextFieldWidget.dart';
 import 'package:firstflutter/widget/TextStyleWidget.dart';
+import 'package:firstflutter/widget/ThemeTestWidget.dart';
 import 'package:firstflutter/widget/WrapFlowWidget.dart';
 import 'package:flutter/material.dart';
 
@@ -63,6 +68,12 @@ class MyApp extends StatelessWidget {
     "gridViewWidget": (context) => GridViewWidget(),
     "customScrollViewWidget": (context) => CustomScrollViewWidget(),
     "willPopScopeWidget": (context) => WillPopScopeWidget(),
+    "providerWidget": (context) => ProviderWidget(),
+    "themeTestWidget": (context) => ThemeTestWidget(),
+    "futureBuilderWidget": (context) => FutureBuilderWidget(),
+    "streamBuilderWidget": (context) => StreamBuilderWidget(),
+    "DialogWidget": (context) => DialogWidget(),
+
 
   };
 
@@ -303,9 +314,43 @@ class _MyHomePageState extends State<MyHomePage> {
                     Navigator.pushNamed(context, "willPopScopeWidget");
                   },
                 ),
+                RaisedButton(
+                  child: Text("providerWidget"),
+                  textColor: Colors.blue,
+                  onPressed: () {
+                    Navigator.pushNamed(context, "providerWidget");
+                  },
+                ),
+                RaisedButton(
+                  child: Text("themeTestWidget"),
+                  textColor: Colors.blue,
+                  onPressed: () {
+                    Navigator.pushNamed(context, "themeTestWidget");
+                  },
+                ),
+                RaisedButton(
+                  child: Text("futureBuilderWidget"),
+                  textColor: Colors.blue,
+                  onPressed: () {
+                    Navigator.pushNamed(context, "futureBuilderWidget");
+                  },
+                ),
+                RaisedButton(
+                  child: Text("streamBuilderWidget"),
+                  textColor: Colors.blue,
+                  onPressed: () {
+                    Navigator.pushNamed(context, "streamBuilderWidget");
+                  },
+                ),
+                RaisedButton(
+                  child: Text("DialogWidget"),
+                  textColor: Colors.blue,
+                  onPressed: () {
+                    Navigator.pushNamed(context, "DialogWidget");
+                  },
+                ),
               ],
             ),
-
           ],
         ),
       ),
