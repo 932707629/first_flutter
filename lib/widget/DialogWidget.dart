@@ -10,98 +10,102 @@ class DialogWidget extends StatelessWidget {
       appBar: AppBar(
         title: Text("各种弹窗"),
       ),
-      body: Wrap(
-        spacing: 4.0,
-        runSpacing: 4.0,
-        alignment: WrapAlignment.center,
-        children: <Widget>[
-          RaisedButton(
-            child: Text("对话框1"),
-            onPressed: () async {
-              bool delete = await showDeleteConfirmDialog1(context);
-              if (delete == null) {
-                print("取消删除");
-              } else {
-                print("已确认删除");
-                //...删除文件
-              }
-            },
-          ),
-          RaisedButton(
-            child: Text("对话框2"),
-            onPressed: () async {
-              changeLanguage(context);
-            },
-          ),
-          RaisedButton(
-            child: Text("对话框3"),
-            onPressed: () async {
-              showListDialog(context);
-            },
-          ),
-          RaisedButton(
-            child: Text("对话框4"),
-            onPressed: () async {
-              showCustomDialog<bool>(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return AlertDialog(
-                      title: Text("提示"),
-                      content: Text("您确定要删除当前文件嘛?"),
-                      actions: <Widget>[
-                        FlatButton(
-                          child: Text("取消"),
-                          onPressed: () => Navigator.of(context).pop(), //关闭对话框,
-                        ),
-                        FlatButton(
-                          child: Text("删除"),
-                          onPressed: () =>
-                              Navigator.of(context).pop(true), //关闭对话框,
-                        ),
-                      ],
-                    );
-                  });
-            },
-          ),
-          RaisedButton(
-            child: Text("对话框5"),
-            onPressed: () async {
-              showDeleteConfirmDialog4(context);
-            },
-          ),
-          RaisedButton(
-            child: Text("底部菜单弹出框"),
-            onPressed: () async {
-              Future<int> type=_showModelBottomSheet(context);
-              print(type.toString());
-            },
-          ),
-          RaisedButton(
-            child: Text("底部全屏菜单弹出框"),
-            onPressed: (){
-              _showBottomSheet(context);
-            },
-          ),
-          RaisedButton(
-            child: Text("加载框"),
-            onPressed: () async{
-              showLoadingDialog(context);
-            },
-          ),
-          RaisedButton(
-            child: Text("日历(MD)"),
-            onPressed: () async{
-              showDatePicker1(context);
-            },
-          ),
-          RaisedButton(
-            child: Text("日历(iOS)"),
-            onPressed: () async{
-              showDatePicker2(context);
-            },
-          ),
-        ],
-      ),
+      body: Builder(builder: (BuildContext context){
+        return Wrap(
+          spacing: 4.0,
+          runSpacing: 4.0,
+          alignment: WrapAlignment.center,
+          children: <Widget>[
+            RaisedButton(
+              child: Text("对话框1"),
+              onPressed: () async {
+                bool delete = await showDeleteConfirmDialog1(context);
+                if (delete == null) {
+                  print("取消删除");
+                } else {
+                  print("已确认删除");
+                  //...删除文件
+                }
+              },
+            ),
+            RaisedButton(
+              child: Text("对话框2"),
+              onPressed: () async {
+                changeLanguage(context);
+              },
+            ),
+            RaisedButton(
+              child: Text("对话框3"),
+              onPressed: () async {
+                showListDialog(context);
+              },
+            ),
+            RaisedButton(
+              child: Text("对话框4"),
+              onPressed: () async {
+                showCustomDialog<bool>(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: Text("提示"),
+                        content: Text("您确定要删除当前文件嘛?"),
+                        actions: <Widget>[
+                          FlatButton(
+                            child: Text("取消"),
+                            onPressed: () => Navigator.of(context).pop(), //关闭对话框,
+                          ),
+                          FlatButton(
+                            child: Text("删除"),
+                            onPressed: () =>
+                                Navigator.of(context).pop(true), //关闭对话框,
+                          ),
+                        ],
+                      );
+                    });
+              },
+            ),
+            RaisedButton(
+              child: Text("对话框5"),
+              onPressed: () async {
+                showDeleteConfirmDialog4(context);
+              },
+            ),
+            RaisedButton(
+              child: Text("底部菜单弹出框"),
+              onPressed: () async {
+                Future<int> type=_showModelBottomSheet(context);
+                print(type.toString());
+              },
+            ),
+            RaisedButton(
+              child: Text("底部全屏菜单弹出框"),
+              onPressed: () async {
+                print("object胡乱打印一下");
+
+                var dialog=_showBottomSheet(context);
+              },
+            ),
+            RaisedButton(
+              child: Text("加载框"),
+              onPressed: () async{
+                showLoadingDialog(context);
+              },
+            ),
+            RaisedButton(
+              child: Text("日历(MD)"),
+              onPressed: () async{
+                showDatePicker1(context);
+              },
+            ),
+            RaisedButton(
+              child: Text("日历(iOS)"),
+              onPressed: () async{
+                showDatePicker2(context);
+              },
+            ),
+          ],
+        );
+      })
     );
   }
 

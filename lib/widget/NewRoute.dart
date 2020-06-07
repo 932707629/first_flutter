@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterapp/EventBus.dart';
 
 class NewRoute extends StatelessWidget{
 
@@ -9,6 +10,10 @@ class NewRoute extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
+    bus.on("route", (arg) {
+      print("事件总线消息接收$arg");
+    });
+
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
