@@ -2,9 +2,11 @@ import 'dart:async';
 import 'package:flutterapp/EventBus.dart';
 import 'package:flutterapp/widget/CustomScrollViewWidget.dart';
 import 'package:flutterapp/widget/DialogWidget.dart';
+import 'package:flutterapp/widget/FileOperationWidget.dart';
 import 'package:flutterapp/widget/FormWidget.dart';
 import 'package:flutterapp/widget/FutureBuilderWidget.dart';
 import 'package:flutterapp/widget/GestureDetectorWidget.dart';
+import 'package:flutterapp/widget/HttpWidget.dart';
 import 'package:flutterapp/widget/ImageIconWidget.dart';
 import 'package:flutterapp/widget/IndicatorWidget.dart';
 import 'package:flutterapp/widget/ListViewWidget.dart';
@@ -80,6 +82,8 @@ class MyApp extends StatelessWidget {
     "DialogWidget": (context) => DialogWidget(),
     "PointerEventWidget": (context) => PointerEventWidget(),
     "GestureDetectorWidget": (context) => GestureDetectorWidget(),
+    "FileOperationWidget": (context) => FileOperationWidget(),
+    "HttpWidget": (context) => HttpWidget(),
 
 
   };
@@ -349,6 +353,20 @@ class _MyHomePageState extends State<MyHomePage> {
                       textColor: Colors.blue,
                       onPressed: () {
                         Navigator.pushNamed(context, "GestureDetectorWidget");
+                      },
+                    ),
+                    RaisedButton(
+                      child: Text("FileOperationWidget"),
+                      textColor: Colors.blue,
+                      onPressed: () {
+                        Navigator.pushNamed(context, "FileOperationWidget");
+                      },
+                    ),
+                    RaisedButton(
+                      child: Text("HttpWidget"),
+                      textColor: Colors.blue,
+                      onPressed: () {
+                        Navigator.pushNamed(context, "HttpWidget");
                       },
                     ),
                   ],
