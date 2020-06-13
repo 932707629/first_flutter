@@ -1,9 +1,5 @@
 
-
-
-import 'dart:convert';
-import 'dart:io';
-
+import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -42,7 +38,9 @@ class HttpState extends State<HttpWidget>{
                     text="正在请求...";
                   });
                   try{
-                    //创建一个httpclient
+                    Response response=await Dio().get("https://www.baidu.com");
+                    text=response.data.toString();
+                    /*//创建一个httpclient
                     HttpClient httpclient=new HttpClient();
                     //打开http连接
                     HttpClientRequest request= await httpclient.getUrl(Uri.parse("https://www.baidu.com"));
@@ -56,7 +54,7 @@ class HttpState extends State<HttpWidget>{
                     print(response.headers);
 
                     //关闭client后，通过该client发起的所有请求都会终止
-                    httpclient.close();
+                    httpclient.close();*/
                   }catch(e){
                     text="请求失败$e";
                   }finally{
@@ -66,6 +64,7 @@ class HttpState extends State<HttpWidget>{
                   }
                 },
               ),
+
               Container(
                 width: MediaQuery.of(context).size.width-50.0,
                 child: Text(text.replaceAll(new RegExp(r"\s"), "")),

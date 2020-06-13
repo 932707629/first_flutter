@@ -26,6 +26,7 @@ import 'package:flutterapp/widget/TapboxA.dart';
 import 'package:flutterapp/widget/TextFieldWidget.dart';
 import 'package:flutterapp/widget/TextStyleWidget.dart';
 import 'package:flutterapp/widget/ThemeTestWidget.dart';
+import 'package:flutterapp/widget/WebSocketWidget.dart';
 import 'package:flutterapp/widget/WrapFlowWidget.dart';
 import 'package:flutter/material.dart';
 
@@ -84,6 +85,8 @@ class MyApp extends StatelessWidget {
     "GestureDetectorWidget": (context) => GestureDetectorWidget(),
     "FileOperationWidget": (context) => FileOperationWidget(),
     "HttpWidget": (context) => HttpWidget(),
+    "WebSocketWidget": (context) => WebSocketWidget(),
+
 
 
   };
@@ -367,6 +370,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       textColor: Colors.blue,
                       onPressed: () {
                         Navigator.pushNamed(context, "HttpWidget");
+                      },
+                    ),
+                    RaisedButton(
+                      child: Text("WebSocketWidget"),
+                      textColor: Colors.blue,
+                      onPressed: () {
+                        Navigator.pushNamed(context, "WebSocketWidget");
                       },
                     ),
                   ],
