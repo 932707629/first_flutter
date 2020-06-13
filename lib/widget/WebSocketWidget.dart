@@ -42,7 +42,6 @@ class WebSocketState extends State<WebSocketWidget> {
                   decoration: new InputDecoration(
                     labelText: 'Send a message',
                   ),
-
                 ),
             ),
             new StreamBuilder(
@@ -58,7 +57,7 @@ class WebSocketState extends State<WebSocketWidget> {
                     padding: const EdgeInsets.symmetric(vertical: 24.0),
                   child:new Text(text),
                 );
-                }
+                },
             ),
           ],
         ),

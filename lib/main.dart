@@ -1,5 +1,7 @@
 import 'dart:async';
+import 'package:flutter/foundation.dart';
 import 'package:flutterapp/EventBus.dart';
+import 'package:flutterapp/widget/BatteryLevelWidget.dart';
 import 'package:flutterapp/widget/CustomScrollViewWidget.dart';
 import 'package:flutterapp/widget/DialogWidget.dart';
 import 'package:flutterapp/widget/FileOperationWidget.dart';
@@ -86,7 +88,7 @@ class MyApp extends StatelessWidget {
     "FileOperationWidget": (context) => FileOperationWidget(),
     "HttpWidget": (context) => HttpWidget(),
     "WebSocketWidget": (context) => WebSocketWidget(),
-
+    "BatteryLevelWidget": (context) => BatteryLevelWidget(),
 
 
   };
@@ -377,6 +379,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       textColor: Colors.blue,
                       onPressed: () {
                         Navigator.pushNamed(context, "WebSocketWidget");
+                      },
+                    ),
+                    RaisedButton(
+                      child: Text("BatteryLevelWidget"),
+                      textColor: Colors.blue,
+                      onPressed: () {
+                        Navigator.pushNamed(context, "BatteryLevelWidget");
                       },
                     ),
                   ],
