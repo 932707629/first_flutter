@@ -29,6 +29,7 @@ import 'package:flutterapp/widget/TextFieldWidget.dart';
 import 'package:flutterapp/widget/TextStyleWidget.dart';
 import 'package:flutterapp/widget/ThemeTestWidget.dart';
 import 'package:flutterapp/widget/WebSocketWidget.dart';
+import 'package:flutterapp/widget/WebViewWidget.dart';
 import 'package:flutterapp/widget/WrapFlowWidget.dart';
 import 'package:flutter/material.dart';
 
@@ -89,7 +90,7 @@ class MyApp extends StatelessWidget {
     "HttpWidget": (context) => HttpWidget(),
     "WebSocketWidget": (context) => WebSocketWidget(),
     "BatteryLevelWidget": (context) => BatteryLevelWidget(),
-
+    "WebViewWidget": (context) => WebViewWidget(),
 
   };
 
@@ -386,6 +387,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       textColor: Colors.blue,
                       onPressed: () {
                         Navigator.pushNamed(context, "BatteryLevelWidget");
+                      },
+                    ),
+                    RaisedButton(
+                      child: Text("WebViewWidget"),
+                      textColor: Colors.blue,
+                      onPressed: () {
+                        Navigator.pushNamed(context, "WebViewWidget");
                       },
                     ),
                   ],

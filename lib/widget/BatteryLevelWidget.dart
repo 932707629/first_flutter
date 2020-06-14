@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -43,6 +44,9 @@ class BatteryLevelState extends State<BatteryLevelWidget> {
   Future<Null> getBatteryLevel() async {
     String batteryLevel;
     try{
+
+      print('输出当前平台信息 ${defaultTargetPlatform}');
+
       final int result= await platform.invokeMethod('getBatteryLevel');
       batteryLevel='Battery level at $result % .';
     } on PlatformException catch (e){
